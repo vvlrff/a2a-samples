@@ -40,6 +40,7 @@ codegen_agent = Agent(
 
 
 async def main() -> str | None:
+    """Generate a CLI script, have it reviewed over A2A, and return the code."""
     reply = await codegen_agent.ask(
         'Please, generate a simple script, allows to transfer USD to EUR using any external API.'
     )

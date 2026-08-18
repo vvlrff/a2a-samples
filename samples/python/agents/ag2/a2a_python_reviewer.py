@@ -13,7 +13,7 @@ from ag2.a2a import A2AServer, build_card
 from ag2.config import OpenAIResponsesConfig
 
 
-HOST = '0.0.0.0'
+HOST = '127.0.0.1'
 PORT = 8000
 # URL the agent card advertises; clients resolve the transport endpoint from it
 URL = f'http://localhost:{PORT}'
@@ -30,6 +30,7 @@ def review_code_with_mypy(
         Field(description='Raw code content to review. Code should be formatted as single file.'),
     ],
 ) -> str:
+    """Type-check a code snippet with mypy and return its report."""
     with tempfile.NamedTemporaryFile('w', suffix='.py') as tmp:
         tmp.write(code)
         tmp.flush()

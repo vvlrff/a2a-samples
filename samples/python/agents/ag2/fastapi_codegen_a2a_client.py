@@ -38,6 +38,7 @@ codegen_agent = Agent(
 
 
 async def main() -> str | None:
+    """Generate a FastAPI application, have it reviewed over A2A, and return the code."""
     reply = await codegen_agent.ask(
         'Please, generate a simple FastAPI application that returns a list of users.'
     )
